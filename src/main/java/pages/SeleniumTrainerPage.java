@@ -1,6 +1,5 @@
 package pages;
 
-import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,15 +10,11 @@ public class SeleniumTrainerPage extends AbsBasePage {
         super(driver);
     }
 
-    public void checkInsertTextWithHeadlessLaunch() {
+    public void checkInsertTextWithHeadlessLaunch(String insertText) {
 
         WebElement element = driver.findElement(By.cssSelector("input#textInput"));
-        insertTextIntoField(element, "something");
-        //checkTextShouldBeSameAs("something", element); //- появляется ошибка, что получаемая строка методом getText() = "";
-
-        String expectedText = "something";
-        String actualText = element.getAttribute("value");
-        Assertions.assertEquals(expectedText, actualText);
+        insertTextIntoField(element, insertText);
+        checkTextShouldBeSameAs(insertText, element);
 
         System.out.println("Test1 is fine");
     }
@@ -34,16 +29,20 @@ public class SeleniumTrainerPage extends AbsBasePage {
         System.out.println("Test2 is fine");
     }
 
-    public void checkInsertNameAndEmailWithFullScreenLaunch() {
+    public void checkInsertNameAndEmailWithFullScreenLaunch(String name, String email) {
 
         WebElement elementName = driver.findElement(By.cssSelector("input#name"));
-        insertTextIntoField(elementName, "фыв");
+        insertTextIntoField(elementName, name);
+
         WebElement elementEmail = driver.findElement(By.cssSelector("input#email"));
-        insertTextIntoField(elementEmail, "asdf@sdfg.rt");
+        insertTextIntoField(elementEmail, email);
+
         WebElement elementSend = driver.findElement(By.cssSelector("button[type]"));
         elementSend.click();
+
         WebElement messageBox = driver.findElement(By.cssSelector("div.message"));
-        checkTextShouldBeSameAs("Форма отправлена с именем: фыв и email: asdf@sdfg.rt", messageBox);
+        String checkMessageBox = String.format("Форма отправлена с именем: %s и email: %s", name, email);
+        checkTextShouldBeSameAs(checkMessageBox, messageBox);
 
         System.out.println("Test3 is fine");
     }

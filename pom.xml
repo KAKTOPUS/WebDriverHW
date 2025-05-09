@@ -13,7 +13,7 @@
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <selenium.version>4.31.0</selenium.version>
+        <selenium.version>4.32.0</selenium.version>
         <webdrivermanager.version>6.1.0</webdrivermanager.version>
         <junit.version>5.12.2</junit.version>
         <assertj.verison>3.27.3</assertj.verison>

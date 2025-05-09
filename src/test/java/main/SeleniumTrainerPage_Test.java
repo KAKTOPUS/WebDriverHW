@@ -9,7 +9,7 @@ public class SeleniumTrainerPage_Test extends BaseSuit {
     public void firstTestCheckInputText() {
         SeleniumTrainerPage seleniumTrainerPage = new SeleniumTrainerPage(driver);
         seleniumTrainerPage.open();
-        seleniumTrainerPage.checkInsertTextWithHeadlessLaunch();
+        seleniumTrainerPage.checkInsertTextWithHeadlessLaunch("something");
     }
 
     @Test
@@ -23,7 +23,7 @@ public class SeleniumTrainerPage_Test extends BaseSuit {
     public void thirdTestCheckNameEmail() {
         SeleniumTrainerPage seleniumTrainerPage = new SeleniumTrainerPage(driver);
         seleniumTrainerPage.open();
-        seleniumTrainerPage.checkInsertNameAndEmailWithFullScreenLaunch();
+        seleniumTrainerPage.checkInsertNameAndEmailWithFullScreenLaunch("фыв", "asdf@sdfg.rt");
     }
 }
 

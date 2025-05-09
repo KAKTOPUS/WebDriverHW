@@ -19,11 +19,19 @@ public class AbsBasePage {
 
     public void checkTextShouldBeSameAs(String text, WebElement element) {
 
-        assertThat(element.getText())
-                .as("Text should be {}", text)
-                .isEqualTo(text);
+        if (element.getText().equals("")) {
+            assertThat(element.getDomProperty("value"))
+                    .as("Text should be {}", text)
+                    .isEqualTo(text);
+        }
+        else {
+            assertThat(element.getText())
+                    .as("Text should be {}", text)
+                    .isEqualTo(text);
+        }
 
     }
+
 
     public void insertTextIntoField(WebElement element, String text) {
         element.sendKeys(text);

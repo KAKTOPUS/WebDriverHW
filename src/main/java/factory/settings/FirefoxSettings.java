@@ -11,7 +11,7 @@ public class FirefoxSettings implements IBrowserSettings {
 
         FirefoxOptions firefoxOptions = new FirefoxOptions();
 
-        switch (launchParameter) {
+        switch (launchParameter.toLowerCase()) {
             case "headless": {
                 firefoxOptions.addArguments("--headless");
                 return firefoxOptions;

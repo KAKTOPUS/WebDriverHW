@@ -10,7 +10,7 @@ public class ChromeSettings implements IBrowserSettings {
     public AbstractDriverOptions settings() {
         ChromeOptions chromeOptions = new ChromeOptions();
 
-        switch (launchParameter) {
+        switch (launchParameter.toLowerCase()) {
             case "headless": {
                 chromeOptions.addArguments("--headless");
                 return chromeOptions;
@@ -24,7 +24,8 @@ public class ChromeSettings implements IBrowserSettings {
                 return chromeOptions;
             }
             default: {
-                return chromeOptions.addArguments("start-fullscreen");
+                chromeOptions.addArguments("start-fullscreen");
+                return chromeOptions;
             }
         }
     }
