@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-public class AbsBasePage {
+public abstract class AbsBasePage {
 
     protected WebDriver driver = null;
 

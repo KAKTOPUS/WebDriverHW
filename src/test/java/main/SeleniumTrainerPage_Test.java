@@ -3,7 +3,7 @@ package main;
 import org.junit.jupiter.api.Test;
 import pages.SeleniumTrainerPage;
 
-public class SeleniumTrainerPage_Test extends BaseSuit {
+public class SeleniumTrainerPage_Test extends AbsBaseSuit {
 
     @Test
     public void firstTestCheckInputText() {
